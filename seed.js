@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Product = require('./models/product');
 
 // 'mongodb+srv://Gaurav:SFZJlOsXIpC6CDYt@cluster0.gt8apq8.mongodb.net/?retryWrites=true&w=majority'
-mongoose.connect('mongodb://127.0.0.1:27017/shopping-app-clone')
+mongoose.connect('mongodb+srv://balodigaurav38:PVKFLHl3h33Ud4dZ@cluster1.ahnxeme.mongodb.net/shopping-app-clone?retryWrites=true&w=majority')
     .then(() => console.log('DB Connected'))
     .catch((err) => console.log(err));
 ;
