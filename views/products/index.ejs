@@ -1,0 +1,101 @@
+<% layout('layouts/boilerplate') -%>
+
+  <section class="container">
+
+
+    <%- include('../partials/flash') %>
+
+    <!-- <section id="heading"> 
+      <h4 class="display-4"><i class="fab fa-shopify" style="margin-right: 20px;"></i>Shopping-Cart</h4>
+    </section> -->
+
+
+      <div  width: 1300px; overflow: hidden; >
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel"
+          style="width: 100%; margin: auto;">
+          <div class="carousel-indicators" style="margin-bottom: 1400px;">
+            <button style="background-color: black;" type="button" data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button style="background-color: black;" type="button" data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button style="background-color: black;" type="button" data-bs-target="#carouselExampleIndicators"
+              data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+
+
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img height="500px"
+                src="https://images-eu.ssl-images-amazon.com/images/G/31/img22/Wireless/devjyoti/GW/Uber/Nov/D103625178_DesktopTallHero_3000x1200._CB574597993_.jpg"
+                style="width: 100%; margin: auto;" alt="Slide 1">
+            </div>
+            <div class="carousel-item">
+              <img height="500px"
+                src="https://images-eu.ssl-images-amazon.com/images/G/31/OHL_HSS/3000x1200-herolowcat._CB582034221_.jpg"
+                style="width: 100%;" alt="Slide 2">
+            </div>
+            <div class="carousel-item">
+              <img height="500px"
+                src="https://images-eu.ssl-images-amazon.com/images/G/31/OHL_HSS/3000x1200-heroH1._CB582036967_.jpg"
+                style="width: 100%;" alt="Slide 3">
+            </div>
+
+            // MAIN PRODUCTS
+            <div class="row products" style="margin-top: 250px;">
+              <%for(let product of products){%>
+                <div class="col-lg-3 col-md-6 mb-3">
+                  <div class="card shadow-sm mx-auto position-relative" style="width: 20rem; background-color: white">
+                    <img src="<%=product.img%>" class="card-img-top" alt="item image">
+
+                    <span class="badge rounded-pill bg-light text-dark w-25 position-absolute translate-middle-y"
+                      style="top:41%;left:5%">
+                      <%=product.avgRating%> &star; | <%=product.reviews.length%>
+                    </span>
+
+                    <div class="card-body">
+                      <h5 class="card-title d-flex justify-content-between align-items-center"><span><%= product.name %> </span>
+                         <span class="btn like-button" product-id = "<%=product._id%>">
+                          <% if (currentUser && currentUser.wishList.includes(product._id)) { %>
+                            <i class="fas fa-heart"></i>
+                          <% } else {%>
+                            <i class="far fa-heart"></i>
+                          <% } %>
+                           
+                          
+                         </span>
+                      </h5>
+                      <p class="card-text fw-light">
+                        <%= product.desc%>
+                      </p>
+                      <% if(product.reviews.length){ %>
+                        <p class="text-muted">
+                          <%=product.reviews.length%> reviews
+                        </p>
+                        <%}else{%>
+                          <p class="text-muted">No reviews</p>
+                          <% } %>
+                            <h6 class="card-title"><span class="fw-lighter fs-6 text-decoration-line-through">Rs.<%=
+                                  product.price %></span> Rs.<%= product.price %> <span
+                                  class="fw-light fs-6 text-warning">( 50 % OFF )</span> </h6>
+                            <a href="/products/<%=product._id%>" class="btn btn-sm show-btn">Buy Now</a>
+                    </div>
+                  </div>
+                </div>
+                <%}%>
+            </div>
+          </div>
+
+
+
+        </div>
+
+
+
+
+
+
+      </div>
+  </section>
+
+
+  <script src="/js/common.js"></script>
