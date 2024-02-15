@@ -1,6 +1,6 @@
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark"  >
   <div class="container">
-    <a class="navbar-brand" href="/products" ><i class="fas fa-shopping-basket"
+    <a style=" color: red;" class="navbar-brand" href="/products" ><i class="fas fa-shopping-basket"
         style="margin-right: 10px;font-size: 2rem; "></i>  Shopping Cart </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
       aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
@@ -9,14 +9,14 @@
     <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="/" >Home</a>
+          <a class="nav-link" style="color: red;" aria-current="page" href="/" >Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/products" >Products</a>
+          <a class="nav-link" href="/products" style="color: red;" >Products</a>
         </li>
         <% if (currentUser && currentUser.role === 'seller') { %>
           <li class="nav-item">
-            <a class="nav-link" href="/products/new" tabindex="-1" aria-disabled="true" >New</a>
+            <a class="nav-link" style="color: red;" href="/products/new" tabindex="-1" aria-disabled="true" >New</a>
           </li>
         <% } %>
         
@@ -25,14 +25,14 @@
       <div class="navbar-nav ml-auto">
 
         <% if (!currentUser) { %>
-          <a href="/login" class="nav-link" style="padding-right: 5px; ">Login ||</a>
-          <a href="/register" class="nav-link" style="padding-left:0px; ">Sign Up</a>
+          <a href="/login" class="nav-link" style="color: red;" style="padding-right: 5px; ">Login ||</a>
+          <a href="/register" class="nav-link" style="color: red;" style="padding-left:0px; ">Sign Up</a>
           <% } else{ %>
-            <a href="#"  class="nav-link text-capitalize">Hello <%= currentUser.username %> </a>
-            <a href="/user/cart"  class="nav-link"><i class="fas fa-shopping-cart"></i> 
-              <sup><span class="badge bg-danger"><%=currentUser.cart.length%></span></sup> 
+            <a href="#"  class="nav-link text-capitalize" style="color: red;">Hello <%= currentUser.username %> </a>
+            <a href="/user/cart"  class="nav-link" style="color: red;"><i class="fas fa-shopping-cart"></i> 
+              <sup><span class="badge bg-danger" ><%=currentUser.cart.length%></span></sup> 
             </a>
-            <a href="/logout" class="nav-link" >Logout</a>
+            <a href="/logout" class="nav-link" style="color: red;" >Logout</a>
 
             <% } %>
 
