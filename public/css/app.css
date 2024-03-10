@@ -11,7 +11,7 @@ main{
 }
 
 .main-body{
-    background-color:#565656;
+    background-color:palegoldenrod;
 }
 
 .products .card img{
@@ -20,7 +20,9 @@ main{
 }
 
 .card{
-    background-color:palegoldenrod;
+    /* background-color:palegoldenrod; */
+    background-color:white;
+    border: 1px solid black;
 }
 
 .show-btn{
