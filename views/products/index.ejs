@@ -66,7 +66,7 @@
                          </span>
                       </h5>
                       <p class="card-text fw-light">
-                        <%= product.desc%>
+                        <%= product.desc.slice(0,60)%>...View Product
                       </p>
                       <% if(product.reviews.length){ %>
                         <p class="text-muted">
